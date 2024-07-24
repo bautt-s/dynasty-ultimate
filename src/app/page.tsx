@@ -8,7 +8,9 @@ import { useEffect } from 'react';
 export default function Home() {
     useEffect(() => {
         const fetchPlayers = async () => {
-            const response = await fetch('http://localhost:3001/players')
+            const apiUrl = (process.env.NEXT_PUBLIC_API_URL)
+            
+            const response = await fetch(apiUrl + '/players')
             const result = await response.json()
 
             localStorage.setItem('players', JSON.stringify(result))
