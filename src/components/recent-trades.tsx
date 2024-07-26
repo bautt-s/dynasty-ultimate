@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { WaiverCard } from "./waiver-card"
-import { FaArrowRightLong } from "react-icons/fa6";
 import { TradeCard } from "./trade-card";
 
 const getRecentTrades = async () => {

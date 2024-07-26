@@ -11,6 +11,7 @@ import { BiMedal } from "react-icons/bi";
 import { GiBoxingGlove } from "react-icons/gi";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export const WebNav = () => {
     const [historyDropdown, setHistoryDropdown] = useState(false)
@@ -18,32 +19,39 @@ export const WebNav = () => {
     const navItems = [
         {
             item: 'Home',
+            href: '/',
             logo: <IoIosSunny />
         },
         {
             item: 'Scores',
+            href: '/scores',
             logo: <MdScoreboard />
         },
         {
             item: 'Standings',
+            href: '/',
             logo: <IoPodium />
         },
         {
             item: 'Teams',
+            href: '/',
             logo: <RiTeamFill />
         },
         {
             item: 'Playoffs',
+            href: '/',
             logo: <FaPenToSquare />
         },
         {
             item: 'History',
+            href: '/',
             logo: <PiSquaresFourBold />,
             dropdown: true,
             action: () => setHistoryDropdown(!historyDropdown)
         },
         {
             item: 'Resources',
+            href: '/',
             logo: <FaRegLightbulb />
         }
     ]
@@ -78,12 +86,13 @@ export const WebNav = () => {
             <div className="flex flex-row mx-auto mt-4 flex-wrap justify-center">
                 {navItems.map((i, index) =>
                     <div className="relative" key={index}>
-                        <button onClick={i.action} className="flex flex-row items-center 
-                        gap-x-2 text-gray-200 hover:bg-gold hover:bg-opacity-10 px-4 py-4 transition-all duration-150">
+                        <Link onClick={i.action} className="flex flex-row items-center duration-150
+                        gap-x-2 text-gray-200 hover:bg-gold hover:bg-opacity-10 px-4 py-4 transition-all"
+                        href={i.href}>
                             <div className="text-xl">{i.logo}</div>
 
                             <div className="uppercase text-sm font-semibold">{i.item}</div>
-                        </button>
+                        </Link>
 
                         {!(i.dropdown) ? undefined :
                             <ul className={`absolute bg-neutral-950 w-full top-[100%] transition-all duration-300

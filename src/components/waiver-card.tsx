@@ -43,8 +43,9 @@ export const WaiverCard = (props: WaiverProps) => {
 
             <div className="bg-neutral-950 flex flex-col mx-4 px-4 pt-4  rounded-bl-[50px] rounded-r-[50px]">
                 <div className="flex flex-row items-center gap-x-4">
-                    <div className={`h-16 w-16 rounded-full bg-gray-700 relative`}
-                    style={{ backgroundImage: getPlayerAvatar(playerInfo?.pos, playerCode), backgroundPosition: 'center', backgroundSize: 'cover'}}>
+                    <div className='h-16 w-16 rounded-full bg-gray-700 relative border-2'
+                    style={{ backgroundImage: getPlayerAvatar(playerInfo?.pos, playerCode), 
+                    backgroundPosition: 'center', backgroundSize: 'cover', borderColor: `var(--${playerInfo?.pos})`}}>
                         <span className={`px-2 py-0 text-xl rounded-full absolute bottom-[-5px] right-[-5px] 
                             ${w.moves[0][0].type === 'Added' ? 'bg-green-500' : 'bg-red-400'}`}>
                             {w.moves[0][0].type === 'Added' ? '+' : '-'}

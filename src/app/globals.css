@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --QB: #ff2a6d;
+    --WR: #58a7ff;
+    --RB: #00ceb8;
+    --TE: #ffae58;
+    --K: #bd66ff;
+    --DT: #7947d4;
+    --DEF: #eee45e;
+    --DL: #ff795a;
+    --LB: #6d7df5;
+    --DB: #ff7cb6;
+    --BN: #b6d0eb;
+    --DE: #6197d1;
+    --CB: #00ce52;
+}
+
 .trade-line::before {
     content: "";
     position: absolute;
